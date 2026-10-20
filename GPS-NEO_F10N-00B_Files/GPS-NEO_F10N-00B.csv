@@ -1,0 +1,16 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"1K_OHM_1, 1K_OHM_2";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";2;"1Kohm";;;
+2;"1uF_1";"C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";1;"1uF";;;
+3;"10Kohm_1";"R_0805_2012Metric_Pad1.20x1.40mm_HandSolder";1;"10Kohm";;;
+4;"10uF_1";"C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";1;"10uF";;;
+5;"33nH_1";"L_0603_1608Metric_Pad1.05x0.95mm_HandSolder";1;"33nH";;;
+6;"100nF_1, 100nF_2";"C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";2;"100nF";;;
+7;"100pF_1";"C_0402_1005Metric_Pad0.74x0.62mm_HandSolder";1;"100pF";;;
+8;"antenna_1";"U.FL_Hirose_U.FL-R-SMT-1_Vertical";1;"Conn_Coaxial_Small";;;
+9;"AP2112K-3.3";"SOT-23-5";1;"AP2112K-3.3";;;
+10;"CR1220";"BAT_CH291-1220LF";1;"CR1220";;;
+11;"IC1";"NEOF10N00B";1;"NEO-F10N-00B";;;
+12;"J1, J2";"PinHeader_1x04_P2.54mm_Vertical";2;"Conn_01x04";;;
+13;"J3";"PinHeader_1x02_P2.54mm_Vertical";1;"Conn_01x02";;;
+14;"LED_2, PWR_LED_1";"LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder";2;"LED";;;
+15;"schottky_1, schottky_2";"D_SMA_Handsoldering";2;"D_Schottky";;;
