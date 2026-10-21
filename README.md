@@ -70,7 +70,7 @@ Every pin assignment, partition choice, library version, and linker flag is fixe
 | `build.sh` | The one-command build: toolchain install, compilation, and merge into a single flashable image |
 | `marauder_cyd_v1_0x0.bin` | The prebuilt merged image, ready to flash at offset `0x0` |
 | `GPS-NEO_F10N-00B_Files/` | The custom NEO-F10N GPS daughterboard: KiCad project, Gerbers, and drill files |
-| `CLOUD_BUILD.md` | Notes for building in a Linux or cloud sandbox and publishing a release |
+
 
 ---
 
