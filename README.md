@@ -89,13 +89,13 @@ Should the connection fail, place the board into download mode first by holding 
 This path requires Python together with [esptool](https://github.com/espressif/esptool) (`pip install esptool`). From the directory that contains the image, paste the following into **cmd**, substituting your own COM port for `COMx`:
 
 ```
-python -m esptool --chip esp32 --port COMx --baud 921600 write-flash -z 0x0 marauder_cyd_v2_0x0.bin
+python -m esptool --chip esp32 --port COMx --baud 921600 write-flash -z 0x0 marauder_cyd_v1_0x0.bin
 ```
 
 If `esptool` is already on your PATH, the shorter form is equivalent:
 
 ```
-esptool --chip esp32 --port COMx --baud 921600 write-flash -z 0x0 marauder_cyd_v2_0x0.bin
+esptool --chip esp32 --port COMx --baud 921600 write-flash -z 0x0 marauder_cyd_v1_0x0.bin
 ```
 
 When the tool prints `Connecting...` and then stalls, enter download mode (hold **BOOT**, tap **RST**, release **BOOT**) and run the command again. Reduce the baud rate to `115200` if the transfer proves unreliable, and note that older esptool releases spell the subcommand `write_flash` with an underscore.
