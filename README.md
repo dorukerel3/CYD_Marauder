@@ -68,7 +68,7 @@ Every pin assignment, partition choice, library version, and linker flag is fixe
 | `source/libs/` | Every library the build requires, pinned to the exact versions used (the build consumes these, not upstream copies) |
 | `compile/` | A self-contained mirror of the sketch and libraries, convenient for building in a single directory |
 | `build.sh` | The one-command build: toolchain install, compilation, and merge into a single flashable image |
-| `marauder_cyd_v2_0x0.bin` | The prebuilt merged image, ready to flash at offset `0x0` |
+| `marauder_cyd_v1_0x0.bin` | The prebuilt merged image, ready to flash at offset `0x0` |
 | `GPS-NEO_F10N-00B_Files/` | The custom NEO-F10N GPS daughterboard: KiCad project, Gerbers, and drill files |
 | `CLOUD_BUILD.md` | Notes for building in a Linux or cloud sandbox and publishing a release |
 
@@ -76,26 +76,26 @@ Every pin assignment, partition choice, library version, and linker flag is fixe
 
 ## Flashing the Prebuilt Release
 
-The flashable artefact is **`marauder_cyd_v2_0x0.bin`**, a single merged image that combines the bootloader, partition table, `boot_app0`, and application, and writes as one file at offset `0x0`. Connect the board through its **micro-USB** port before flashing.
+The flashable artefact is **`marauder_cyd_v1_0x0.bin`**, a single merged image that combines the bootloader, partition table, `boot_app0`, and application, and writes as one file at offset `0x0`. Connect the board through its **micro-USB** port before flashing.
 
 ### Option A: Browser flasher (no installation)
 
-Open the web flasher at **[dorukerel.com](https://dorukerel.com)** in Chrome or Edge (both expose the WebSerial API), connect the board over micro-USB, choose the serial port, and flash `marauder_cyd_v2_0x0.bin` at offset `0x0`. No Python, drivers, or command line are required.
+Open the web flasher at **[dorukerel.com](https://dorukerel.com)** in Chrome or Edge (both expose the WebSerial API), connect the board over micro-USB, choose the serial port, and flash `marauder_cyd_v1_0x0.bin` at offset `0x0`. No Python, drivers, or command line are required.
 
 Should the connection fail, place the board into download mode first by holding **BOOT**, tapping **RST**, then releasing **BOOT**, and retry.
 
 ### Option B: Command line with esptool
 
-This path requires Python together with [esptool](https://github.com/espressif/esptool) (`pip install esptool`). From the directory that contains the image, paste the following into **cmd**, substituting your own COM port for `COM6`:
+This path requires Python together with [esptool](https://github.com/espressif/esptool) (`pip install esptool`). From the directory that contains the image, paste the following into **cmd**, substituting your own COM port for `COMx`:
 
 ```
-python -m esptool --chip esp32 --port COM6 --baud 921600 write-flash -z 0x0 marauder_cyd_v2_0x0.bin
+python -m esptool --chip esp32 --port COMx --baud 921600 write-flash -z 0x0 marauder_cyd_v2_0x0.bin
 ```
 
 If `esptool` is already on your PATH, the shorter form is equivalent:
 
 ```
-esptool --chip esp32 --port COM6 --baud 921600 write-flash -z 0x0 marauder_cyd_v2_0x0.bin
+esptool --chip esp32 --port COMx --baud 921600 write-flash -z 0x0 marauder_cyd_v2_0x0.bin
 ```
 
 When the tool prints `Connecting...` and then stalls, enter download mode (hold **BOOT**, tap **RST**, release **BOOT**) and run the command again. Reduce the baud rate to `115200` if the transfer proves unreliable, and note that older esptool releases spell the subcommand `write_flash` with an underscore.
@@ -110,7 +110,7 @@ Every parameter that affects the output is pinned, so a clone rebuilds the publi
 bash build.sh
 ```
 
-The resulting **`marauder_cyd_v2_0x0.bin`** appears in the repository root. On Windows, run the command from Git Bash, and keep the checkout on a short path such as `C:\cyd` to stay clear of the 260 character path limit.
+The resulting **`marauder_cyd_v1_0x0.bin`** appears in the repository root. On Windows, run the command from Git Bash, and keep the checkout on a short path such as `C:\cyd` to stay clear of the 260 character path limit.
 
 The build is fixed to the following configuration:
 
