@@ -6,10 +6,10 @@
 # via Device > Update Firmware > WiFi Update once attached to a GitHub Release).
 #
 # Usage:
-#   bash build.sh            # just build  -> marauder_cyd_v2_0x0.bin
+#   bash build.sh            # just build  -> marauder_cyd_v1_0x0.bin
 #   bash build.sh --release  # build AND publish a GitHub release with the .bin (needs gh auth)
 #
-# Network note (Claude cloud / restricted sandboxes): allow these hosts so the core and
+# Network note (cloud / restricted sandboxes): allow these hosts so the core and
 # esptool can download:  github.com, raw.githubusercontent.com, objects.githubusercontent.com,
 # espressif.github.io, downloads.arduino.cc, dl.espressif.com, files.pythonhosted.org, pypi.org
 # =====================================================================================
@@ -20,7 +20,7 @@ export PATH="$BIN_DIR:$PATH"
 
 FQBN="esp32:esp32:esp32:PartitionScheme=min_spiffs,FlashSize=4M,PSRAM=disabled,CPUFreq=240"
 CORE_VER="2.0.17"
-OUT="$ROOT/marauder_cyd_v2_0x0.bin"
+OUT="$ROOT/marauder_cyd_v1_0x0.bin"
 
 echo "==> arduino-cli"
 if ! command -v arduino-cli >/dev/null 2>&1; then
